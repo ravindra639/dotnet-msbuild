@@ -1,0 +1,21 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: BranchName_Display
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Prints the current branch name
+    - run: echo "${GITHUB_BRANCH##*/}"
+    env:
+      GITHUB_BRANCH: ${{ github.ref }}
