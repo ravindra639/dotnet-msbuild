@@ -28,13 +28,11 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
     
+    - name: Display the path
+      run: echo %PATH%
+
     - name: Sleep for 30 seconds
       run: Start-Sleep -s 30
-      shell: pwsh
-      
-    - name: Display the path
-      run: echo ${env:PATH}
-      shell: pwsh
 
     #- name: Restore NuGet packages
      # working-directory: ${{env.GITHUB_WORKSPACE}}
