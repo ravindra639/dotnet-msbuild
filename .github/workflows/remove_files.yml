@@ -26,5 +26,7 @@ jobs:
     - name: Display the path
       run: echo ${{ github.workspace }}
       
-    - name: Remove the pfx
-      run: Remove-Item -path ${{ github.workspace }}\Scripts\msbuild-pipeline.txt
+    - name: Remove the old files
+      run: |
+        Remove-Item -path ${{ github.workspace }}\Scripts\msbuild-pipeline.txt
+        Remove-Item -path ${{ github.workspace }}\README.md
