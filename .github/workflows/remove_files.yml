@@ -24,7 +24,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
     
     - name: Display the path
-      run: echo ${{env.GITHUB_WORKSPACE}}
+      run: echo ${{ github.workspace }}
       
     - name: Remove the pfx
-      run: Remove-Item -path ${{env.GITHUB_WORKSPACE}}\Scripts\msbuild-pipeline.txt
+      run: Remove-Item -path ${{ github.workspace }}\Scripts\msbuild-pipeline.txt
