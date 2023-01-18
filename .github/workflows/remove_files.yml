@@ -1,0 +1,28 @@
+name: Remove files
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  SOLUTION_FILE_PATH: .
+  BUILD_CONFIGURATION: Debug
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: msbuild
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+    
+    - name: Display the path
+      run: echo %PATH%
+      
+    - name: Remove the pfx
+      run: Remove-Item -path ${{env.GITHUB_WORKSPACE}}\Scripts\msbuild-pipeline.txt
