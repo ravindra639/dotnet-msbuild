@@ -28,10 +28,10 @@ jobs:
       run: |
         Remove-Item -path ${{ github.workspace }}\Scripts\msbuild-pipeline.txt
         Remove-Item -path ${{ github.workspace }}\README.md
-        run: echo $GITHUB_WORKSPACE
         
     - name: Calling Batch file
       run: |
         working-directory: ${{ github.workspace }}\Scripts
+        echo "$working-directory"
         echo "Running Batch file"
         Invoke-Expression ".\echo.bat"
