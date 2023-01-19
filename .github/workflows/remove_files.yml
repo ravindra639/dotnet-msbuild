@@ -1,9 +1,7 @@
-name: Remove files
+name: Remove files and calling Batch file
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 env:
@@ -30,3 +28,9 @@ jobs:
       run: |
         Remove-Item -path ${{ github.workspace }}\Scripts\msbuild-pipeline.txt
         Remove-Item -path ${{ github.workspace }}\README.md
+        
+    - name: Calling Batch file
+      run: |
+        working-directory: ${{env.GITHUB_WORKSPACE}}\Scripts
+        echo "Running Batch file"
+        Invoke-Expression ".\echo.bat"
