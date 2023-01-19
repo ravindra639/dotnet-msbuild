@@ -30,7 +30,7 @@ jobs:
         Remove-Item -path ${{ github.workspace }}\README.md
         
     - name: Calling Batch file
+      working-directory: ${{env.GITHUB_WORKSPACE}}\Scripts
       run: |
-        working-directory: Scripts
         echo "Running Batch file"
-        Invoke-Expression "Scripts\echo.bat"
+        ./echo.bat
