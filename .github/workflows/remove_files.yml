@@ -33,5 +33,5 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         echo "Running Batch file"
-        #./Scripts/\echo.bat
-        D:\STUDY\batch\echo.bat
+        ./Scripts/echo.bat
+        #D:\STUDY\batch\echo.bat
