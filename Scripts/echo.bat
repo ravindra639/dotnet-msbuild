@@ -1,4 +1,6 @@
 @echo off 
-set str=sfdcSandbox
+echo "DISPLAYING NAME"
+set str=RAVINDRA
 echo %str% 
+echo "Displaying PATH"
 echo %PATH%
