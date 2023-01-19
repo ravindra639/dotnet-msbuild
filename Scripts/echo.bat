@@ -1,6 +1,6 @@
 @echo off 
-echo "DISPLAYING NAME"
+echo DISPLAYING NAME
 set str=RAVINDRA
 echo %str% 
-echo "Displaying PATH"
+echo Displaying PATH
 echo %PATH%
