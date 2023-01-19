@@ -31,6 +31,6 @@ jobs:
         
     - name: Calling Batch file
       run: |
-        working-directory: ${{ github.workspace }}\Scripts
+        working-directory: Scripts
         echo "Running Batch file"
         Invoke-Expression ".\echo.bat"
