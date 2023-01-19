@@ -33,4 +33,4 @@ jobs:
       run: |
         working-directory: Scripts
         echo "Running Batch file"
-        Invoke-Expression ".\echo.bat"
+        Invoke-Expression "Scripts\echo.bat"
